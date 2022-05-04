@@ -6,7 +6,7 @@ export interface IStoreContext {
   addItem: (name: string) => void
   clearItems: () => void
   removeItem: (itemUuid: string) => void
-  shuffleItems: () => Item
+  shuffleItems: () => void
 }
 
 export const StoreContext = createContext<IStoreContext | null>(null)

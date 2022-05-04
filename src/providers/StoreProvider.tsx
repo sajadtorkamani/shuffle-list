@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import shuffle from 'lodash/shuffle'
+
 import { IStoreContext, StoreContext } from '../contexts/StoreContext'
 import { loadItems, saveItems, uuid } from '../utilities'
 import { Item } from '../types'
@@ -29,18 +31,16 @@ const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
     setItems(newItems)
   }
 
-  const shuffleItems = useCallback((): Item => {
-    const randomIndex = Math.floor(Math.random() * items.length)
-    const randomItem = items[randomIndex]
-    return randomItem
-  }, [items])
+  const shuffleItems = () => {
+    setItems(shuffle(items))
+  }
 
   const initialStoreContext: IStoreContext = {
     items,
     addItem,
     clearItems,
     removeItem,
-    shuffleItems: shuffleItems,
+    shuffleItems
   }
 
   return (
