@@ -8,8 +8,8 @@ npm install
 
 ### Start local dev server
 
-npm run start
 ```bash
+npm run start
 ```
 
 Runs the app in the development mode.
