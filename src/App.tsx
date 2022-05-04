@@ -14,9 +14,7 @@ const App = () => {
       <div className="bg-white border border-gray-300 mx-4 py-7 px-6">
         <h1 className="text-3xl font-bold mb-6">Shuffle list</h1>
 
-        <p className="text-sm mb-4">
-          Add some items and then click "Shuffle".
-        </p>
+        <p className="text-sm mb-4">Add some items and then click "Shuffle".</p>
 
         <AddBox />
 

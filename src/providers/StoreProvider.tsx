@@ -1,13 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import shuffle from 'lodash/shuffle'
 
 import { IStoreContext, StoreContext } from '../contexts/StoreContext'
 import { loadItems, saveItems, uuid } from '../utilities'
 import { Item } from '../types'
 
-const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
-                                                                  children,
-                                                                }) => {
+type Props = { children: React.ReactNode }
+
+const StoreProvider: React.FC<Props> = ({ children }) => {
   const previouslySavedItems = loadItems()
   const [items, setItems] = useState<Item[]>(previouslySavedItems)
 
@@ -40,7 +40,7 @@ const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
     addItem,
     clearItems,
     removeItem,
-    shuffleItems
+    shuffleItems,
   }
 
   return (

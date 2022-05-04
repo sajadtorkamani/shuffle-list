@@ -20,4 +20,6 @@ console.
 
 ## Deployment
 
-TODO
+Pushes to the `master` branch are automatically deployed to
+[shufflelist.netlify.app](https://shufflelist.netlify.app) via
+[Netlify](https://www.netlify.com).
